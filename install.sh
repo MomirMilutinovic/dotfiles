@@ -1,10 +1,22 @@
 #!/usr/bin/env bash
 
-#Add PPA for i3-gaps
-sudo add-apt-repository ppa:regolith-linux/release
+# Install alacritty
+sudo apt install curl
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+source $HOME/.cargo/env && rustup default nightly && rustup update
+sudo apt install cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3 gzip
+cargo install alacritty
+# Create desktop entry for alacritty
+sudo cp target/release/alacritty /usr/local/bin
+sudo cp extra/logo/alacritty-term.svg /usr/share/pixmaps/Alacritty.svg
+sudo desktop-file-install extra/linux/Alacritty.desktop
+sudo update-desktop-database
+
+#Add PPAs
+sudo add-apt-repository ppa:regolith-linux/release -y
 
 # Install dependencies
-sudo apt install i3-gaps polybar powerline neovim alacritty tmux fzf zsh lm-sensors
+sudo apt install i3-gaps polybar powerline neovim tmux fzf zsh lm-sensors rofi
 
 # Make directories for some config files
 mkdir -p ~/.config/i3 ~/.config/nvim ~/.config/polybar
