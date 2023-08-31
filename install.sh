@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
 
+#Add PPA for i3-gaps
+sudo add-apt-repository ppa:regolith-linux/release
+
 # Install dependencies
-sudo apt install i3-gaps polybar powerline nvim alacritty tmux fzf zsh lm-sensors
+sudo apt install i3-gaps polybar powerline neovim alacritty tmux fzf zsh lm-sensors
 
 # Make directories for some config files
 mkdir -p ~/.config/i3 ~/.config/nvim ~/.config/polybar
