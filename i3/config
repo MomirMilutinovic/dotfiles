@@ -207,10 +207,10 @@ gaps outer 0
 #}
 bindsym $mod+shift+x exec i3lock --color "$bg-color"
 
-bindsym $mod+d exec --no-startup-id /home/momir/.config/rofi/launchers-git/launcher.sh
+bindsym $mod+d exec --no-startup-id ~/.config/rofi/launchers-git/launcher.sh
 
 #For jpg wallpapers
-exec_always feh --bg-scale /home/momir/feelingsWheelWallpaperDeskotop.png
+exec_always feh --bg-scale ~/feelingsWheelWallpaperDeskotop.png
 
 #For png wallpapers
 #exec_always feh --bg-scale Wallpaper.png
@@ -243,7 +243,7 @@ exec ~/scripts/runEvolution.sh
 bindsym Print exec spectacle
 
 new_window pixel 2
-bindsym $mod+b exec /home/momir/toggle.sh
+bindsym $mod+b exec ~/toggle.sh
 
 
 # Moving workspaces between screens
@@ -263,6 +263,6 @@ exec mictray
 
 exec redshift -l 45.26:19.83 -t 5500:2000 -g 0.8 -m randr
 exec sudo swapoff -a
-# exec /home/momir/scripts/toggleGrayscale.sh
+# exec ~/scripts/toggleGrayscale.sh
 exec xrandr --output HDMI-1 --same-as eDP-1 
-exec sleep 10; /home/momir/activitywatch/aw-qt;
+exec sleep 10; ~/activitywatch/aw-qt;
