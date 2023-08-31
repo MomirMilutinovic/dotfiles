@@ -28,6 +28,7 @@ ln -sf bash/bashrc ~/.bashrc
 ln -sf i3/config ~/.config/i3/config
 ln -sf nvim/init.vim ~/.config/nvim/init.vim
 ln -sf polybar/config ~/.config/polybar/polybar/config
+ln -sf rofi ~/.conifg/rofi
 ln -sf tmux/tmux.conf ~/.tmux.conf
 ln -sf vim/vimrc ~/.vimrc
 ln -sf zsh/aliases ~/.aliases
