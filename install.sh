@@ -20,17 +20,17 @@ mkdir -p ~/.config/i3 ~/.config/nvim ~/.config/polybar
 
 
 # Symlink configs into place
-ln -sf alacritty/alacritty.yml ~/.alacritty.yml
-ln -sf bash/bashrc ~/.bashrc
-ln -sf i3/config ~/.config/i3/config
-ln -sf nvim/init.vim ~/.config/nvim/init.vim
-ln -sf picom ~/.config/picom
-ln -sf polybar/config ~/.config/polybar/polybar/config
-ln -sf rofi ~/.conifg/rofi
-ln -sf tmux/tmux.conf ~/.tmux.conf
-ln -sf vim/vimrc ~/.vimrc
-ln -sf zsh/aliases ~/.aliases
-ln -sf zsh/zshrc ~/.zshrc
+ln -sf ~/.dotfiles/alacritty/alacritty.yml ~/.alacritty.yml
+ln -sf ~/.dotfiles/bash/bashrc ~/.bashrc
+ln -sf ~/.dotfiles/i3/config ~/.config/i3/config
+ln -sf ~/.dotfiles/nvim/init.vim ~/.config/nvim/init.vim
+ln -sf ~/.dotfiles/picom ~/.config/picom
+ln -sf ~/.dotfiles/polybar/config ~/.config/polybar/polybar/config
+ln -sf ~/.dotfiles/rofi ~/.conifg/rofi
+ln -sf ~/.dotfiles/tmux/tmux.conf ~/.tmux.conf
+ln -sf ~/.dotfiles/vim/vimrc ~/.vimrc
+ln -sf ~/.dotfiles/zsh/aliases ~/.aliases
+ln -sf ~/.dotfiles/zsh/zshrc ~/.zshrc
 
 # Install vim-plug
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
