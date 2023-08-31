@@ -25,7 +25,7 @@ ln -sf ~/.dotfiles/bash/bashrc ~/.bashrc
 ln -sf ~/.dotfiles/i3/config ~/.config/i3/config
 ln -sf ~/.dotfiles/nvim/init.vim ~/.config/nvim/init.vim
 ln -sf ~/.dotfiles/picom ~/.config/picom
-ln -sf ~/.dotfiles/polybar ~/.config/polybar/
+ln -sf ~/.dotfiles/polybar ~/.config/polybar
 ln -sf ~/.dotfiles/rofi ~/.config/rofi
 ln -sf ~/.dotfiles/tmux/tmux.conf ~/.tmux.conf
 ln -sf ~/.dotfiles/vim/vimrc ~/.vimrc
