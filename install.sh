@@ -12,11 +12,8 @@ sudo cp extra/logo/alacritty-term.svg /usr/share/pixmaps/Alacritty.svg
 sudo desktop-file-install extra/linux/Alacritty.desktop
 sudo update-desktop-database
 
-#Add PPAs
-sudo add-apt-repository ppa:regolith-linux/release -y
-
 # Install dependencies
-sudo apt install i3-gaps polybar powerline neovim tmux fzf zsh lm-sensors rofi
+sudo apt install i3 polybar powerline neovim tmux fzf zsh lm-sensors rofi picom
 
 # Make directories for some config files
 mkdir -p ~/.config/i3 ~/.config/nvim ~/.config/polybar
