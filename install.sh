@@ -16,7 +16,7 @@ sudo update-desktop-database
 sudo apt install i3 polybar powerline neovim tmux fzf zsh lm-sensors rofi picom
 
 # Make directories for some config files
-mkdir -p ~/.config/i3 ~/.config/nvim ~/.config/polybar
+mkdir -p ~/.config/i3 
 
 
 # Symlink configs into place
@@ -25,8 +25,8 @@ ln -sf ~/.dotfiles/bash/bashrc ~/.bashrc
 ln -sf ~/.dotfiles/i3/config ~/.config/i3/config
 ln -sf ~/.dotfiles/nvim/init.vim ~/.config/nvim/init.vim
 ln -sf ~/.dotfiles/picom ~/.config/picom
-ln -sf ~/.dotfiles/polybar/config ~/.config/polybar/polybar/config
-ln -sf ~/.dotfiles/rofi ~/.conifg/rofi
+ln -sf ~/.dotfiles/polybar ~/.config/polybar/
+ln -sf ~/.dotfiles/rofi ~/.config/rofi
 ln -sf ~/.dotfiles/tmux/tmux.conf ~/.tmux.conf
 ln -sf ~/.dotfiles/vim/vimrc ~/.vimrc
 ln -sf ~/.dotfiles/zsh/aliases ~/.aliases
