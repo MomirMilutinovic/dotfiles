@@ -1,0 +1,517 @@
+[colors]
+background = #fff0f0f0
+background-alt = #DBAAA9
+background-alt2 = #ededed
+foreground = #0f0e0f
+foreground-strong = #000000
+foreground-alt = #555
+primary = #ffb52a
+secondary = #e60053
+alert = #bd2c40
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[bar/top]
+width = 100%
+monitor = ${env:MONITOR:}
+height = 25
+fixed-center = true
+background = ${colors.background}
+foreground = ${colors.foreground}
+padding-left = 0
+padding-right = 0
+module-margin-left = 0
+module-margin-right = 0
+
+font-0 = .Helvetica Neue Interface:style=Regular:size=10;1
+font-1 = UbuntuMono Nerd Font:size=10;2
+font-2 = UbuntuMono Nerd Font:size=21;3
+font-3 = Weather Icons:size=10;1
+font-4 = Material Icons:size=10;1
+font-5 = .Helvetica Neue Interface:style=Medium:size=10;1
+font-6 = DroidSansM Nerd Font:style=Regular:size=10;3
+
+modules-left = i3 
+modules-center = windowtitle 
+modules-right = xkeyboard s cpu s memory s pulseaudio s wireless-network s battery s date
+
+module-margin = 0
+wm-restack = i3
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+border-size = 0
+border-color = ${colors.background}
+
+tray-position = right
+tray-padding = 2
+tray-background = ${colors.background}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[bar/external-top]
+width = 100%
+monitor = HDMI-1
+height = 25
+fixed-center = true
+background = ${colors.background}
+foreground = ${colors.foreground}
+padding-left = 0
+padding-right = 0
+module-margin-left = 0
+module-margin-right = 0
+
+font-0 = .Helvetica Neue Interface:style=Regular:size=10;1
+font-1 = UbuntuMono Nerd Font:size=10;2
+font-2 = UbuntuMono Nerd Font:size=21;3
+font-3 = Weather Icons:size=10;1
+font-4 = Material Icons:size=10;1
+font-5 = .Helvetica Neue Interface:style=Medium:size=10;1
+font-6 = DroidSansM Nerd Font:style=Regular:size=10;3
+
+modules-left = i3 
+;modules-center = windowtitle 
+modules-right = xkeyboard s cpu s memory s pulseaudio s wireless-network s battery s date
+
+module-margin = 0
+wm-restack = i3
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+border-size = 0
+border-color = ${colors.background}
+
+tray-position = right
+tray-padding = 2
+tray-background = ${colors.background}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[bar/bottom]
+bottom = true
+monitor = ${env:MONITOR:}
+width = 100%
+height = 23
+fixed-center = true
+background = ${colors.background}
+foreground = ${colors.foreground}
+padding-left = 0
+padding-right = 0
+module-margin-left = 0
+module-margin-right = 0
+
+font-0 = .Helvetica Neue Interface:style=Regular:size=9;1
+font-1 = UbuntuMono Nerd Font:size=10;2
+font-2 = UbuntuMono Nerd Font:size=16;4
+font-3 = Material Icons:size=10;1
+font-4 = Material Icons:size=10;1
+
+modules-left = i3
+modules-center =  windowtitle
+modules-right = xkeyboard s cpu s memory s
+
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+border-size = 5
+border-color = ${colors.background}
+
+; #### MODULES ####
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[module/windowtitle]
+type = internal/xwindow
+format = <label>
+label = " %{T5}%title%%{T-} "
+format-foreground = ${colors.foreground}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[module/s]
+type = custom/text
+content = "%{T4}  %{T-}"
+content-background = ${colors.background}
+
+[module/vert_s]
+type = custom/text
+content = "%{T4} | %{T-}"
+content-background = ${colors.background}
+
+[module/battery]
+type = internal/battery
+
+battery = BAT0
+adapter = ADP0
+full-at = 98
+
+format-charging = <animation-charging> <label-charging>
+format-full = <label-full>
+label-charging = "%percentage%% Charged "
+label-full = " Fully charged "
+animation-charging-0 = ""
+animation-charging-1 = ""
+animation-charging-2 = ""
+animation-charging-3 = ""
+animation-charging-4 = ""
+label-discharging = " %percentage%%"
+format-charging-background = ${colors.background}
+ormat-charging-prefix = %{T3}%{T-}
+format-charging-prefix-foreground = ${colors.background}
+format-charging-prefix-background = ${colors.background}
+;format-charging-suffix = %{T3}%{T-}
+format-charging-suffix-foreground = ${colors.background}
+format-charging-suffix-background = ${colors.background}
+
+
+
+format-discharging-background = ${colors.background}
+;format-discharging-prefix = %{T3}%{T-}
+;format-discharging-prefix-foreground = ${colors.background}
+;format-discharging-prefix-background = ${colors.background}
+;format-discharging-suffix = %{T3}%{T-}
+;format-discharging-suffix-foreground = ${colors.background}
+;format-discharging-suffix-background = ${colors.background}
+
+
+format-full-background = ${colors.background}
+;format-full-prefix = %{T3}%{T-}
+;format-full-prefix-foreground = ${colors.background}
+;format-full-prefix-background = ${colors.background}
+;format-full-suffix = %{T3}%{T-}
+;format-full-suffix-foreground = ${colors.background}
+;format-full-suffix-background = ${colors.background}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[module/cpu]
+type = internal/cpu
+format = <label>
+label = "  %percentage%%"
+interval = 0.5
+format-background = ${colors.background}
+;format-prefix = %{T3}%{T-}
+;format-prefix-foreground = ${colors.background}
+;format-prefix-background = ${colors.background}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[module/memory]
+type = internal/memory
+format = <label>
+label = "  %mb_used%"
+interval = 3
+format-background = ${colors.background}
+;format-prefix = %{T3}%{T-}
+;format-prefix-foreground = ${colors.background}
+;format-prefix-background = ${colors.background}
+;format-suffix = %{T3}%{T-}
+;format-suffix-foreground = ${colors.background}
+;format-suffix-background = ${colors.background}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[module/pulseaudio]
+type = internal/pulseaudio
+use-ui-max = true
+interval = 5
+format-volume = "<ramp-volume> <label-volume> "
+format-muted = <label-muted>
+label-muted = "   Muted "
+ramp-volume-0 =" "
+ramp-volume-1 =" "
+ramp-volume-2 =" 墳"
+format-volume-background = ${colors.background}
+format-muted-background = ${colors.background}
+;format-volume-prefix = %{T3}%{T-}
+;format-volume-prefix-foreground = ${colors.background}
+;format-volume-prefix-background = ${colors.background}
+;format-muted-prefix = %{T3} %{T-}
+;format-muted-prefix-foreground = ${colors.background}
+;format-muted-prefix-background = ${colors.background}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[module/backlight]
+type = internal/xbacklight
+enable-scroll = true
+format = <label>
+label = "   %percentage%% "
+format-background = ${colors.background}
+format-prefix = %{T3}%{T-}
+format-prefix-foreground = ${colors.background}
+format-prefix-background = ${colors.background}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[module/wireless-network]
+type = internal/network
+format-connected = " <label-connected> "
+label-connected = " %essid%"
+interface = wlp0s20f3
+;format-disconnected-suffix =%{T3}%{T-}
+format-disconnected-background = ${colors.background}
+;format-disconnected-suffix-foreground = ${colors.background}
+;format-disconnected-suffix-background = ${colors.background}
+;format-disconnected-prefix = %{T3}%{T-}
+;format-disconnected-prefix-foreground = ${colors.background}
+;format-disconnected-prefix-background = ${colors.background}
+;format-connected-suffix =%{T3}%{T-}
+format-connected-background = ${colors.background}
+;format-connected-suffix-foreground = ${colors.background}
+;format-connected-suffix-background = ${colors.background}
+;format-connected-prefix =%{T3}%{T-}
+;format-connected-prefix-foreground = ${colors.background}
+;format-connected-prefix-background = ${colors.background}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[module/ip]
+type = internal/network
+interface = wlp0s20f3
+format-connected = " <label-connected> "
+format-disconnected = " <label-disconnected> "
+label-disconnected = Not Connected
+label-connected = "  %local_ip%"
+format-connected-background = ${colors.background}
+format-disconnected-background = ${colors.background}
+;format-connected-suffix = %{T3}%{T-}
+;format-connected-suffix-foreground = ${colors.background}
+;format-connected-suffix-background = ${colors.background}
+;format-connected-prefix = %{T3}%{T-}
+;format-connected-prefix-foreground = ${colors.background}
+;format-connected-prefix-background = ${colors.background}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[module/bspwm]
+type = internal/bspwm
+
+label-focused = %index%
+label-focused-background = ${colors.background}
+label-focused-underline= ${colors.primary}
+label-focused-padding = 1
+
+label-occupied = %index%
+label-occupied-background = ${colors.background}
+label-occupied-padding = 1
+
+label-urgent = %index%!
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 1
+
+label-empty = %index%
+label-empty-background = ${colors.background}
+label-empty-padding = 1
+
+; Separator in between workspaces
+; label-separator = |
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = false
+
+; Only show workspaces on the same output as the bar
+;pin-workspaces = true
+
+label-mode-padding = 5
+label-mode-foreground = #000
+label-mode-background = ${colors.primary}
+
+; focused = Active workspace on focused monitor
+label-focused = "%icon%"
+label-focused-background = ${module/bspwm.label-focused-background}
+label-focused-underline = ${module/bspwm.label-focused-underline}
+label-focused-padding = ${module/bspwm.label-focused-padding}
+label-focused-foreground = #000
+
+; unfocused = Inactive workspace on any monitor
+label-unfocused = "%icon%"
+label-unfocused-background = ${colors.background}
+label-unfocused-padding = ${module/bspwm.label-occupied-padding}
+label-unfocused-foreground = #949494
+
+; visible = Active workspace on unfocused monitor
+label-visible = "%icon%"
+label-visible-background = ${self.label-focused-background}
+label-visible-underline = ${self.label-focused-underline}
+label-visible-padding = ${self.label-focused-padding}
+
+; urgent = Workspace with urgency hint set
+label-urgent = "%icon%"
+label-urgent-background = ${module/bspwm.label-urgent-background}
+label-urgent-padding = ${module/bspwm.label-urgent-padding}
+
+label-empty = "%icon%"
+label-empty-background = ${colors.background}
+label-empty-padding = 2
+
+label-separator = "%{T4}  %{T-}"
+
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-4 = 5;5
+ws-icon-5 = 6;6
+ws-icon-6 = 7;7
+ws-icon-7 = 8;8
+ws-icon-8 = 9;ﭮ
+ws-icon-9 = 10;壘
+
+; Separator in between workspaces
+; label-separator = |
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[module/i3_circle]
+type = internal/i3
+
+enable-click = true
+enable-scroll = true
+reverse-scroll = true
+pin-workspaces = true
+occupied-scroll = false
+
+
+format = <label-state>
+
+label-focused = 󰮯
+label-focused-background = ${colors.background}
+label-focused-padding = 1
+label-focused-foreground = ${colors.foreground}
+
+label-occupied = 󰊠
+label-occupied-padding = 1
+label-occupied-background = ${colors.background}
+label-occupied-foreground= ${colors.foreground}
+
+label-urgent = %icon%
+label-urgent-padding = 0
+
+label-empty = 󰑊
+label-empty-foreground = ${color.purple}
+label-empty-padding = 1
+label-empty-background = ${color.mb}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[module/date]
+type = internal/date
+interval = 1.0
+date =  %a %b %e
+time = %l:%M %p
+format = " <label> "
+label = "%date% %time%"
+format-background = ${colors.background}
+;format-prefix = %{T3}%{T-}
+;format-prefix-foreground = ${colors.background}
+;format-prefix-background = ${colors.background}
+;format-suffix = %{T3}%{T-}
+;format-suffix-foreground = ${colors.background}
+;format-suffix-background = ${colors.background}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[module/filesystem]
+type = internal/fs
+interval = 25
+
+mount-0 = /home
+label-mounted = "  %{T0}%{T-} %percentage_used%% "
+label-unmounted = %mountpoint% not mounted
+label-unmounted-foreground = ${colors.background}
+
+format-mounted = <label-mounted>
+format-mounted-background = ${colors.background}
+format-mounted-prefix = %{T3}%{T-}
+format-mounted-prefix-foreground = ${colors.background}
+format-mounted-prefix-background = ${colors.background}
+
+[module/xkeyboard]
+type = internal/xkeyboard
+blacklist-0 = num lock
+
+format = "<label-layout>"
+
+format-background = ${colors.background}
+;format-prefix = %{T4}%{T-}
+;format-prefix-foreground = ${colors.background}
+;format-prefix-background = ${colors.background}
+
+label-layout = "  %layout% "
+
+[module/weather]
+type = custom/script
+exec = ~/.config/polybar-forecast/polybar-forecast-linux-x86_64
+exec-if = ping openweathermap.org -c 1
+interval = 60
+label-font = 4
+api_key = "open_weather_api_key"
+city_id = "city_id"
+
+format = " <label> "
+format-background = ${colors.background}
+;format-prefix = %{T3}%{T-}
+;format-prefix-foreground = ${colors.background}
+;format-prefix-background = ${colors.background}
+
+[module/now_playing]
+type = custom/script
+
+exec = "python3 $HOME/scripts/now_playing.py"
+
+tail = true
+
+format = "<label>
+format-background = ${colors.background}
+format-prefix = %{T3}%{T-}
+format-prefix-foreground = ${colors.background}
+format-prefix-background = ${colors.background}
+
+label = "  %output:0:50% "
+
+[module/temperature]
+type = internal/temperature
+
+; Seconds to sleep between updates
+; Default: 1
+interval = 0.5
+
+; Thermal zone to use
+; To list all the zone types, run 
+; $ for i in /sys/class/thermal/thermal_zone*; do echo "$i: $(<$i/type)"; done
+; Default: 0
+thermal-zone = 0
+
+; Full path of temperature sysfs path
+; Use `sensors` to find preferred temperature source, then run
+; $ for i in /sys/class/hwmon/hwmon*/temp*_input; do echo "$(<$(dirname $i)/name): $(cat ${i%_*}_label 2>/dev/null || echo $(basename ${i%_*})) $(readlink -f $i)"; done
+; to find path to desired file
+; Default reverts to thermal zone setting
+hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon5/temp1_input
+
+; Base temperature for where to start the ramp (in degrees celsius)
+; Default: 0
+base-temperature = 20
+
+; Threshold temperature to display warning label (in degrees celsius)
+; Default: 80
+warn-temperature = 75
+; Available tags:
+;   <label> (default)
+;   <ramp>
+format = <ramp> <label>
+format-background = ${colors.background}
+format-prefix = %{T3}%{T-}
+format-prefix-foreground = ${colors.background}
+format-prefix-background = ${colors.background}
+
+
+; Available tags:
+;   <label-warn> (default)
+;   <ramp>
+format-warn = "<ramp> <label-warn> "
+format-warn-background = ${colors.background}
+format-warn-prefix = %{T3}%{T-}
+format-warn-prefix-foreground = ${colors.background}
+format-warn-prefix-background = ${colors.background}
+
+; Available tokens:
+;   %temperature% (deprecated)
+;   %temperature-c%   (default, temperature in °C)
+;   %temperature-f%   (temperature in °F)
+label = %temperature-c%
+
+; Available tokens:
+;   %temperature% (deprecated)
+;   %temperature-c%   (default, temperature in °C)
+;   %temperature-f%   (temperature in °F)
+label-warn = %temperature-c%
+label-warn-foreground = #f00
+
+; Requires the <ramp> tag
+; The icon selection will range from `base-temperature` to `warn-temperature`,
+; temperatures at and above `warn-temperature` will use the last icon
+; and temperatures at and below `base-temperature` will use `ramp-0`. 
+; All other icons are distributed evenly between the two temperatures.
+ramp-0 = "  "
+ramp-1 = "  "
+ramp-2 = "  "
