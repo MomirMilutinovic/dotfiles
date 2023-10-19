@@ -84,3 +84,4 @@ nmap <silent> <A-Left> :wincmd h<CR>
 nmap <silent> <A-Right> :wincmd l<CR>
 
 set relativenumber
+set number
