@@ -243,7 +243,6 @@ exec ~/scripts/runEvolution.sh
 bindsym Print exec spectacle
 
 new_window pixel 2
-bindsym $mod+b exec ~/toggle.sh
 
 
 # Moving workspaces between screens
