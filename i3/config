@@ -266,3 +266,4 @@ exec sudo swapoff -a
 # exec ~/scripts/toggleGrayscale.sh
 exec xrandr --output HDMI-1 --same-as eDP-1 
 exec sleep 10; ~/activitywatch/aw-qt;
+exec ~/scripts/autolock.sh
