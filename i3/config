@@ -241,6 +241,7 @@ exec ~/scripts/runEvolution.sh
 
 #Screenshot
 bindsym Print exec spectacle
+bindsym shift+Print exec spectacle -r
 
 new_window pixel 2
 
