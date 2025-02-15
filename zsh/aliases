@@ -1,7 +1,7 @@
 alias bat="batcat"
 alias dc="cd"
 alias mv="mv -i"
-alias zzz="systemctl suspend"
+alias zzz="i3lock && systemctl suspend"
 alias gc="git commit"
 alias gs="git status"
 alias sen="sensors"
