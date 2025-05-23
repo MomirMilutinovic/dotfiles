@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/momir/.oh-my-zsh"
+export ZSH="/home/$USER/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -99,17 +99,17 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
-. /home/momir/.local/lib/python3.10/site-packages/powerline/bindings/zsh/powerline.zsh 
+. /home/$USER/.local/lib/python3.10/site-packages/powerline/bindings/zsh/powerline.zsh 
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-PATH=$PATH:/home/momir/altPackages/py37/bin
+PATH=$PATH:/home/$USER/altPackages/py37/bin
 source ~/.aliases
 
-export PATH="/home/momir/pycharm-community-2021.2.3/bin:$PATH"
+export PATH="/home/$USER/pycharm-community-2021.2.3/bin:$PATH"
 
-export PATH="$PATH:/home/momir/go/bin"
-export PATH="$PATH:/home/momir/.cargo/bin"
-export OLLAMA_MODELS="/home/momir/llms"
+export PATH="$PATH:/home/$USER/go/bin"
+export PATH="$PATH:/home/$USER/.cargo/bin"
+export OLLAMA_MODELS="/home/$USER/llms"
 export EDITOR="vim"
 
 
