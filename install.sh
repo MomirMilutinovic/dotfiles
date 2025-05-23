@@ -13,7 +13,28 @@ sudo desktop-file-install extra/linux/Alacritty.desktop
 sudo update-desktop-database
 
 # Install dependencies
-sudo apt install i3 polybar powerline neovim tmux fzf zsh lm-sensors rofi picom
+sudo apt install i3 polybar powerline neovim tmux fzf zsh lm-sensors rofi picom libglib2.0-bin
+
+# Install oh-my-zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+# Install powerline fonts
+git clone --depth 1 https://github.com/powerline/fonts pl-fonts && cd pl-fonts
+./install.sh
+cd ..
+
+# Install other fonts
+mkdir -p ~/.local/share/fonts
+cd ~/.local/share/fonts && curl -fLO https://github.com/ryanoasis/nerd-fonts/raw/HEAD/patched-fonts/DroidSansMono/DroidSansMNerdFont-Regular.otf && curl -fLO https://github.com/ryanoasis/nerd-fonts/raw/HEAD/patched-fonts/UbuntuMono/UbuntuMonoNerdFont-Regular.ttf
+
+fc-cache
+
+cd ~/.dotfiles
+
+mkdir ~/.config/fontconfig/conf.d
+curl -L "https://github.com/powerline/powerline/blob/develop/font/10-powerline-symbols.conf" \
+  -o ~/.config/fontconfig/conf.d/10-powerline-symbols.conf
+
 
 # Make directories for some config files
 mkdir -p ~/.config/i3 
