@@ -1,4 +1,5 @@
 ln -sf ~/.dotfiles/alacritty/alacritty.yml ~/.alacritty.yml
+ln -sf ~/.dotfiles/alacritty/alacritty.toml ~/.alacritty.toml
 ln -sf ~/.dotfiles/bash/bashrc ~/.bashrc
 ln -sf ~/.dotfiles/i3/config ~/.config/i3/config
 ln -sf ~/.dotfiles/nvim/init.vim ~/.config/nvim/init.vim
